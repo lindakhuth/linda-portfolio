@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MykroGrid Website Redesign — Linda Khuth</title>
+  <meta name="description" content="Case study: MykroGrid website redesign. Repositioned MykroGrid's public site around outcomes for utility partners — sharper narrative, clearer information architecture, faster path to a demo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+
+  <style>
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 24px;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <main class="cs-page">
+    <!-- ==================== HERO ==================== -->
+    <section class="cs-hero">
+      <div class="cs-hero__meta cs-fade">
+        <p class="cs-tags">CLEANTECH &middot; MARKETING &middot; WEB</p>
+        <h1 class="cs-hero__title">MykroGrid Website Redesign</h1>
+        <blockquote class="cs-hero__callout">
+          Repositioned MykroGrid&rsquo;s public site around outcomes for utility partners &mdash; sharper narrative, clearer information architecture, faster path to a demo.
+        </blockquote>
+        <dl class="cs-hero__details">
+          <div><dt>Role</dt><dd>Sole UX/UI Designer</dd></div>
+          <div><dt>Team</dt><dd>2 Developers</dd></div>
+          <div><dt>Timeline</dt><dd>Oct 2025 &ndash; Feb 2026</dd></div>
+          <div><dt>Platform</dt><dd>Web</dd></div>
+        </dl>
+        <a href="https://mykrogrid.com" target="_blank" rel="noopener" class="cs-live-link">
+          <span>View live site</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="cs-hero__mockup cs-fade">
+        <div class="cs-mockup cs-mockup--flush" data-placeholder="Homepage.png">
+          <img src="Homepage.png" alt="MykroGrid homepage shown on a laptop" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BODY (content + sticky sidenav) ==================== -->
+    <div class="cs-body">
+      <div class="cs-content">
+        <!-- ---------- Overview ---------- -->
+        <section id="overview" class="cs-fade">
+          <p class="cs-eyebrow">OVERVIEW</p>
+          <div class="cs-overview__grid">
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">01</p>
+              <p class="cs-overview__label">The Brief</p>
+              <p class="cs-overview__body">Redesign MykroGrid&rsquo;s marketing website to clarify offerings, build credibility, and drive partner engagement in Nigeria&rsquo;s cleantech landscape.</p>
+            </div>
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">02</p>
+              <p class="cs-overview__label">The Problem</p>
+              <p class="cs-overview__body">The original site lacked clarity and visual consistency. Confusing structure, limited brand cohesion, and a poor conversion funnel meant potential partners weren&rsquo;t engaging.</p>
+            </div>
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">03</p>
+              <p class="cs-overview__label">The Outcome</p>
+              <p class="cs-overview__body">A live, responsive website that clearly communicates MykroGrid&rsquo;s product ecosystem to three distinct audiences &mdash; residents, institutional clients, and developers.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- The Challenge ---------- -->
+        <section id="challenge" class="cs-fade">
+          <p class="cs-eyebrow" style="text-align:center; display:block;">THE PROBLEM</p>
+          <h2 class="cs-heading cs-heading--center">The Challenge</h2>
+          <div class="cs-cards">
+            <article class="cs-card">
+              <p class="cs-card__num">01</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M6 6h10v10H6zM24 6h10v10H24zM6 24h10v10H6zM24 24h10v10H24z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M16 11h8M11 16v8M24 29h-8M29 16v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+              <h3 class="cs-card__title">Confusing Structure</h3>
+              <p class="cs-card__body">The site didn&rsquo;t communicate MykroGrid&rsquo;s product ecosystem or credibility as a funded cleantech startup.</p>
+              <p class="cs-card__insight">Potential partners couldn&rsquo;t understand what MykroGrid did or who it was for.</p>
+            </article>
+            <article class="cs-card">
+              <p class="cs-card__num">02</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M20 4c9 0 16 6.5 16 15 0 5-4 8-9 8h-3c-2 0-3 1-3 3 0 1 1 2 1 3 0 2-2 3-4 3-8 0-14-6-14-14C4 12 11 4 20 4z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="12" cy="16" r="1.6" fill="currentColor"/>
+                <circle cx="18" cy="11" r="1.6" fill="currentColor"/>
+                <circle cx="25" cy="12" r="1.6" fill="currentColor"/>
+                <circle cx="30" cy="18" r="1.6" fill="currentColor"/>
+              </svg>
+              <h3 class="cs-card__title">Weak Brand Identity</h3>
+              <p class="cs-card__body">Limited brand cohesion across digital channels made the company look unestablished.</p>
+              <p class="cs-card__insight">The visual language didn&rsquo;t match the ambition of the company.</p>
+            </article>
+            <article class="cs-card">
+              <p class="cs-card__num">03</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M4 6h32l-11 14v12l-10-4V20z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              <h3 class="cs-card__title">Poor Conversion Funnel</h3>
+              <p class="cs-card__body">Low engagement from potential partners &mdash; no clear path to contact or learn more.</p>
+              <p class="cs-card__insight">Users had no clear next action after landing on the site.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Goals ---------- -->
+        <section id="goals" class="cs-fade">
+          <p class="cs-eyebrow">WHAT WE SET OUT TO DO</p>
+          <h2 class="cs-heading">Three Goals. One Direction.</h2>
+          <div class="cs-cards">
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 01</p>
+              <h3 class="cs-card__title">Clarity</h3>
+              <p class="cs-card__body">Clarify MykroGrid&rsquo;s product ecosystem and service value for all target audiences.</p>
+            </article>
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 02</p>
+              <h3 class="cs-card__title">Credibility</h3>
+              <p class="cs-card__body">Strengthen brand identity through cohesive visuals, messaging, and content hierarchy.</p>
+            </article>
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 03</p>
+              <h3 class="cs-card__title">Conversion</h3>
+              <p class="cs-card__body">Increase partner engagement by simplifying navigation and optimizing the inquiry funnel.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Process ---------- -->
+        <section id="process" class="cs-fade">
+          <p class="cs-eyebrow">HOW WE GOT THERE</p>
+          <h2 class="cs-heading">Discovery to Delivery</h2>
+          <div class="cs-process">
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 01</p>
+                <h3 class="cs-process__title">Discovery &amp; Research</h3>
+                <p class="cs-process__body">Conducted stakeholder interviews to define goals and pain points. Performed a full audit of the existing MykroGrid site across three pages &mdash; Homepage, Technology Solution, and Our Projects &mdash; documenting what was working, what was unclear, and suggested improvements for each. Also conducted competitive analysis of Nigerian clean energy platforms including Daystar Power and Solynta Energy, documenting visual approaches, content structure, and messaging strategies. Identified three primary audiences: Residents, Institutional Clients, and Developers.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="cs-mockup cs-mockup--flush" data-placeholder="mykrogrid-research.png">
+                  <img src="mykrogrid-research.png" alt="MykroGrid website audit across Homepage, Technology Solution, and Our Projects pages" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 02</p>
+                <h3 class="cs-process__title">Information Architecture &amp; Wireframing</h3>
+                <p class="cs-process__body">Simplified site structure into clear paths: Home, About Us, Technology Solution, Small Businesses &amp; Markets, Our Projects. Designed a scalable navigation system for easy expansion.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="cs-mockup cs-mockup--flush" data-placeholder="mykrogrid-ia.png">
+                  <img src="mykrogrid-ia.png" alt="MykroGrid website information architecture and site flow chart" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 03</p>
+                <h3 class="cs-process__title">Visual Design</h3>
+                <p class="cs-process__body">Developed updated brand components (color system, typography, spacing, grid). Introduced energy-inspired visuals, iconography, and modular layout blocks. Designed responsive screens for desktop, tablet, and mobile.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="cs-mockup cs-mockup--flush" data-placeholder="mykrogrid-typography.png">
+                  <img src="mykrogrid-typography.png" alt="MykroGrid website typography and visual design system" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 04</p>
+                <h3 class="cs-process__title">Developer Handoff</h3>
+                <p class="cs-process__body">Delivered responsive prototypes and component libraries in Figma. Worked with 2 developers on QA to ensure fidelity in the Next.js build.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="cs-mockup cs-mockup--flush" data-placeholder="mykrogrid-handoff.png">
+                  <img src="mykrogrid-handoff.png" alt="MykroGrid developer handoff mockup" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- Solution ---------- -->
+        <section id="solution" class="cs-fade">
+          <p class="cs-eyebrow">THE RESULT</p>
+          <h2 class="cs-heading">A site that works as hard as the product does</h2>
+
+          <div class="cs-solution__grid">
+            <div class="cs-solution__meta">
+              <p class="cs-solution__lead">The redesign introduced a modern, scalable website centered on clean storytelling, trust, and easy navigation.</p>
+              <ul class="cs-solution__list">
+                <li>Clarified product messaging for each audience segment.</li>
+                <li>Streamlined the conversion process through clear calls-to-action.</li>
+                <li>Built responsive components that support MykroGrid&rsquo;s credibility and future growth.</li>
+              </ul>
+            </div>
+            <div class="cs-solution__mockup-wrap cs-fade">
+              <div class="cs-mockup cs-mockup--phone" data-placeholder="iPhone%2012%20Pro%20Max%20-%20Home%20Page.png">
+                <img src="iPhone%2012%20Pro%20Max%20-%20Home%20Page.png" alt="MykroGrid mobile view on iPhone" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-fade">
+            <div class="cs-mockup cs-mockup--flush cs-mockup--large" data-placeholder="Homepage.png">
+              <img src="Homepage.png" alt="MykroGrid homepage — full width view" loading="lazy" />
+            </div>
+            <img src="About_us_laptop.png" alt="About Us page design — MykroGrid website redesign" style="width: 100%; border-radius: 12px; margin-top: 24px;" />
+            <img src="Smallbizlaptop.png" alt="Small Businesses and Markets page — MykroGrid website redesign" style="width: 100%; border-radius: 12px; margin-top: 16px;" />
+          </div>
+        </section>
+
+        <!-- ---------- Results ---------- -->
+        <section id="results" class="cs-fade">
+          <p class="cs-eyebrow">OUTCOMES</p>
+          <h2 class="cs-heading">What shipped</h2>
+          <div class="cs-cards">
+            <article class="cs-card cs-result">
+              <p class="cs-result__icon" aria-hidden="true">🌐</p>
+              <h3 class="cs-result__title">Live and launched</h3>
+              <p class="cs-result__body">The redesigned site is live and serving MykroGrid&rsquo;s three audience segments.</p>
+            </article>
+            <article class="cs-card cs-result">
+              <p class="cs-result__icon" aria-hidden="true">🏗️</p>
+              <h3 class="cs-result__title">Production-ready handoff</h3>
+              <p class="cs-result__body">Delivered a complete Figma component library and responsive prototypes to the engineering team.</p>
+            </article>
+            <article class="cs-card cs-result">
+              <p class="cs-result__icon" aria-hidden="true">📐</p>
+              <h3 class="cs-result__title">Design system established</h3>
+              <p class="cs-result__body">Built the visual foundation that now underpins all future MykroGrid web properties.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Reflection ---------- -->
+        <section id="reflection" class="cs-fade">
+          <p class="cs-eyebrow">LOOKING BACK</p>
+          <h2 class="cs-heading">What I learned</h2>
+          <div class="cs-reflection__grid">
+            <ul class="cs-reflection__list">
+              <li>Designing for three distinct audiences on one site requires ruthless prioritization of hierarchy &mdash; every section had to earn its place.</li>
+              <li>Working directly with developers from the start (not just at handoff) produced a cleaner, more faithful build.</li>
+              <li>The constraint of a lean team pushed better scoping decisions &mdash; we shipped what mattered first.</li>
+            </ul>
+            <div class="cs-reflection__decoration" aria-hidden="true">&ldquo;</div>
+          </div>
+          <a href="index.html" class="cs-back">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Back to case studies</span>
+          </a>
+        </section>
+      </div>
+
+      <!-- Sticky side nav (right on desktop, horizontal pills on mobile) -->
+      <nav class="cs-sidenav" aria-label="Case study sections">
+        <a href="#overview" class="cs-sidenav__link">Overview</a>
+        <a href="#challenge" class="cs-sidenav__link">The Challenge</a>
+        <a href="#goals" class="cs-sidenav__link">Goals</a>
+        <a href="#process" class="cs-sidenav__link">Process</a>
+        <a href="#solution" class="cs-sidenav__link">Solution</a>
+        <a href="#results" class="cs-sidenav__link">Results</a>
+        <a href="#reflection" class="cs-sidenav__link">Reflection</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Floating bottom nav (shared with homepage) -->
+  <nav class="floating-nav" aria-label="Primary">
+    <a href="index.html" class="floating-nav__brand" aria-label="Linda Khuth home">LINDA KHUTH</a>
+    <ul class="floating-nav__links">
+      <li>
+        <a href="index.html#work">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="floating-nav__label">Case Studies</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="floating-nav__label">About Me</span>
+        </a>
+      </li>
+      <li>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15 3v4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12h7M8.5 15.5h7M8.5 19h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span class="floating-nav__label">Resume</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/linda-khuth/" target="_blank" rel="noopener noreferrer">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span class="floating-nav__label">LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    (() => {
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Highlight the current page's nav link. Case Studies stays active on both
+      // the homepage and any case study detail page. Static hosts sometimes strip
+      // `.html`, so we normalize by comparing filenames without the extension.
+      (() => {
+        const raw = (location.pathname.split('/').pop() || 'index').toLowerCase();
+        const currentPage = raw.replace(/\.html$/, '');
+        const isAbout = currentPage === 'about';
+        document.querySelectorAll('.floating-nav__links a').forEach(link => {
+          const label = link.querySelector('.floating-nav__label')?.textContent?.trim();
+          if (isAbout && label === 'About Me') link.classList.add('nav--active');
+          else if (!isAbout && label === 'Case Studies') link.classList.add('nav--active');
+        });
+      })();
+
+      /* -------- Fade-in on scroll -------- */
+      const faders = document.querySelectorAll('.cs-fade');
+      const markVisibleIfInView = () => {
+        const vh = window.innerHeight;
+        faders.forEach(el => {
+          if (el.classList.contains('is-visible')) return;
+          const r = el.getBoundingClientRect();
+          // Consider visible when top edge crosses 85% of the viewport
+          if (r.top < vh * 0.85 && r.bottom > 0) {
+            el.classList.add('is-visible');
+          }
+        });
+      };
+      if (reduced) {
+        faders.forEach(el => el.classList.add('is-visible'));
+      } else {
+        // Mark immediately-visible elements first so above-the-fold content isn't hidden
+        markVisibleIfInView();
+        if ('IntersectionObserver' in window) {
+          const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+          faders.forEach(el => {
+            if (!el.classList.contains('is-visible')) fadeObserver.observe(el);
+          });
+        }
+        // Belt-and-suspenders: scroll listener as a fallback for any observer misses
+        window.addEventListener('scroll', markVisibleIfInView, { passive: true });
+      }
+
+      /* -------- Scroll spy for side nav -------- */
+      const sections = document.querySelectorAll('.cs-content > section[id]');
+      const navLinks = document.querySelectorAll('.cs-sidenav__link');
+      if (sections.length && navLinks.length) {
+        const linkById = {};
+        navLinks.forEach(a => {
+          const id = a.getAttribute('href').slice(1);
+          linkById[id] = a;
+        });
+        const setActive = (id) => {
+          navLinks.forEach(a => a.classList.remove('is-active'));
+          if (linkById[id]) linkById[id].classList.add('is-active');
+        };
+        // Scroll-based spy: pick the section whose top is closest to (but past) the anchor line at 30% of the viewport
+        const updateSpy = () => {
+          const anchor = window.innerHeight * 0.3;
+          let currentId = sections[0].id;
+          sections.forEach(s => {
+            if (s.getBoundingClientRect().top <= anchor) currentId = s.id;
+          });
+          setActive(currentId);
+        };
+        updateSpy();
+        window.addEventListener('scroll', updateSpy, { passive: true });
+        window.addEventListener('resize', updateSpy);
+      }
+
+    })();
+  </script>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+  <script>
+    (() => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      if (!lightbox || !lightboxImg) return;
+
+      document.querySelectorAll('main img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add('active');
+        });
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) lightbox.classList.remove('active');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') lightbox.classList.remove('active');
+      });
+    })();
+  </script>
+</body>
+</html>

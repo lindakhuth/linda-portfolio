@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IntelyEdu Website Revamp — Linda Khuth</title>
+  <meta name="description" content="Case study: IntelyEdu website revamp. A ground-up rethink of IntelyEdu's site for a healthcare-education audience — new content system, refreshed identity, and a lead flow that respects the buyer's time." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+
+  <style>
+    /* Page-specific: the longest challenge title ("Disorganized Course Library", 27 chars)
+       needs a smaller font to stay on one line inside a 3-column card layout. */
+    #challenge .cs-card__title { font-size: 16px; }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 24px;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <main class="cs-page">
+    <!-- ==================== HERO ==================== -->
+    <section class="cs-hero">
+      <div class="cs-hero__meta cs-fade">
+        <p class="cs-tags">EDTECH &middot; MARKETING &middot; WEB</p>
+        <h1 class="cs-hero__title">IntelyEdu Website Revamp</h1>
+        <blockquote class="cs-hero__callout">
+          A ground-up rethink of IntelyEdu&rsquo;s site for a healthcare-education audience &mdash; new content system, refreshed identity, and a lead flow that respects the buyer&rsquo;s time.
+        </blockquote>
+        <dl class="cs-hero__details">
+          <div><dt>Role</dt><dd>Product Designer (Contractor)</dd></div>
+          <div><dt>Team</dt><dd>Product Manager, Stakeholders</dd></div>
+          <div><dt>Timeline</dt><dd>Jul 2022 &ndash; Dec 2022</dd></div>
+          <div><dt>Platform</dt><dd>Web</dd></div>
+        </dl>
+      </div>
+      <div class="cs-hero__mockup cs-fade">
+        <div class="cs-mockup cs-mockup--flush" data-placeholder="intelyedu-hero.png">
+          <img src="intelyedu-hero.png" alt="IntelyEdu homepage final design" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BODY (content + sticky sidenav) ==================== -->
+    <div class="cs-body">
+      <div class="cs-content">
+        <!-- ---------- Overview ---------- -->
+        <section id="overview" class="cs-fade">
+          <p class="cs-eyebrow">OVERVIEW</p>
+          <div class="cs-overview__grid">
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">01</p>
+              <p class="cs-overview__label">The Brief</p>
+              <p class="cs-overview__body">IntelyEdu is IntelyCare&rsquo;s educational destination for nursing professionals who specialize in post-acute care. It allows for learner-centric educational offerings and affiliate programs that are timely, relevant, easily accessible, and structured to fit your life.</p>
+            </div>
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">02</p>
+              <p class="cs-overview__label">The Problem</p>
+              <p class="cs-overview__body">The existing site had no clear calls to action, inconsistent branding with IntelyCare, confusing navigation, and didn&rsquo;t clearly communicate the difference between IntelyPro and non-IntelyPro experiences.</p>
+            </div>
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">03</p>
+              <p class="cs-overview__label">The Outcome</p>
+              <p class="cs-overview__body">Redesigned three key pages &mdash; Homepage, All Courses, and About IntelyEdu &mdash; improving clarity, navigation, and brand consistency across the platform.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- The Challenge ---------- -->
+        <section id="challenge" class="cs-fade">
+          <p class="cs-eyebrow" style="text-align:center; display:block;">THE PROBLEM</p>
+          <h2 class="cs-heading cs-heading--center">The Challenge</h2>
+          <div class="cs-cards">
+            <article class="cs-card">
+              <p class="cs-card__num">01</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M4 20l16-14 16 14v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M16 36V24h8v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              <h3 class="cs-card__title">Confusing Homepage</h3>
+              <p class="cs-card__body">The homepage had no clear call to action and didn&rsquo;t communicate what IntelyEdu offered or what the difference was between IntelyPro and non-IntelyPro experiences.</p>
+              <p class="cs-card__insight">Visitors couldn&rsquo;t quickly understand what IntelyEdu offered or how to get started.</p>
+            </article>
+            <article class="cs-card">
+              <p class="cs-card__num">02</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <rect x="5" y="6" width="12" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="23" y="6" width="12" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="5" y="22" width="12" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <rect x="23" y="22" width="12" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <h3 class="cs-card__title">Disorganized Course Library</h3>
+              <p class="cs-card__body">All courses were represented by the same generic bullseye image, making it impossible for users to differentiate between courses at a glance.</p>
+              <p class="cs-card__insight">A nurse with 10 minutes to spare shouldn&rsquo;t have to hunt for the right course.</p>
+            </article>
+            <article class="cs-card">
+              <p class="cs-card__num">03</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M20 13v2M20 19v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <h3 class="cs-card__title">Weak About Page</h3>
+              <p class="cs-card__body">The About IntelyEdu page had design inconsistencies and didn&rsquo;t clearly communicate IntelyEdu&rsquo;s story, offerings, or goals to its nursing audience.</p>
+              <p class="cs-card__insight">Trust is everything in healthcare education &mdash; the page wasn&rsquo;t earning it.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Goals ---------- -->
+        <section id="goals" class="cs-fade">
+          <p class="cs-eyebrow">WHAT WE SET OUT TO DO</p>
+          <h2 class="cs-heading">Three Pages. One Clearer Experience.</h2>
+          <div class="cs-cards">
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 01</p>
+              <h3 class="cs-card__title">Clarity</h3>
+              <p class="cs-card__body">Redesign the homepage to immediately communicate IntelyEdu&rsquo;s value to nursing professionals.</p>
+            </article>
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 02</p>
+              <h3 class="cs-card__title">Discoverability</h3>
+              <p class="cs-card__body">Improve the All Courses page so nurses can find and enroll in relevant courses quickly.</p>
+            </article>
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 03</p>
+              <h3 class="cs-card__title">Trust</h3>
+              <p class="cs-card__body">Strengthen the About page to build credibility with a healthcare-education audience.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Process ---------- -->
+        <section id="process" class="cs-fade">
+          <p class="cs-eyebrow">HOW WE GOT THERE</p>
+          <h2 class="cs-heading">Discovery to Delivery</h2>
+          <div class="cs-process">
+            <div class="cs-process__step" style="grid-template-columns: 1fr;">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 01</p>
+                <h3 class="cs-process__title">Research &amp; Assumptions</h3>
+                <p class="cs-process__body">Before redesigning, we documented what we already knew about users and identified key assumptions: IntelyPros weren&rsquo;t clear on what perks they had with IntelyEdu, the current experience was hard to navigate, and the site wasn&rsquo;t consistent with IntelyCare branding. We defined four metrics to track success: number of sign-ups, page visits, calls logged from IntelyPros on IntelyEdu, and active IntelyPros in the platform.</p>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 02</p>
+                <h3 class="cs-process__title">Problem Framing</h3>
+                <p class="cs-process__body">The redesign was scoped into three distinct problem areas &mdash; Homepage Experience, All Courses Page, and About IntelyEdu &mdash; each with its own user criteria and success definition. For the homepage, users needed clear CTAs differentiating IntelyPro vs non-IntelyPro paths. For the courses page, thumbnails needed to reflect what each course was actually about. For the About page, IntelyEdu&rsquo;s story, offerings, and authors needed to be clearly communicated.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="cs-mockup cs-mockup--flush" data-placeholder="intelyedu-framing.png">
+                  <img src="intelyedu-framing.png" alt="IntelyEdu course images before and after redesign" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 03</p>
+                <h3 class="cs-process__title">High-Fidelity Design</h3>
+                <p class="cs-process__body">Four homepage concepts were created and presented to stakeholders. Each explored a different visual direction &mdash; from staying close to the existing IntelyCare brand to a more distinct &ldquo;Future of Nursing&rdquo; feel. Stakeholders selected a combination of Concepts 3 and 4, giving IntelyEdu a refreshed identity while maintaining familiarity.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="cs-mockup cs-mockup--flush" data-placeholder="intelyedu-designs.png">
+                  <img src="intelyedu-designs.png" alt="Four IntelyEdu homepage concept explorations" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process__step" style="grid-template-columns: 1fr;">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 04</p>
+                <h3 class="cs-process__title">Iteration &amp; Handoff</h3>
+                <p class="cs-process__body">Based on stakeholder feedback, we moved forward with a combination of Concepts 3 and 4 for the homepage. Course thumbnails were updated so each image reflected the course content &mdash; allowing users to quickly differentiate between courses. IntelyPro courses were labeled in the bottom right corner. Development restrictions prevented some criteria from being fully met, but the shipped changes were significantly beneficial to both new and existing users.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- Solution ---------- -->
+        <section id="solution" class="cs-fade">
+          <p class="cs-eyebrow">THE RESULT</p>
+          <h2 class="cs-heading">A site that works for nurses, not against them</h2>
+
+          <div class="cs-solution__grid">
+            <div class="cs-solution__meta">
+              <p class="cs-solution__lead">Redesigned homepage with two clear CTAs &mdash; Sign Up for IntelyEdu and Sign In &mdash; prioritizing new user acquisition.</p>
+              <ul class="cs-solution__list">
+                <li>Moved courses higher on the homepage as a content priority.</li>
+                <li>Updated all course thumbnails so each image reflects the course content.</li>
+                <li>IntelyPro courses clearly labeled to differentiate from non-IntelyPro offerings.</li>
+                <li>Refreshed About IntelyEdu page telling IntelyEdu&rsquo;s story and showcasing expert authors.</li>
+              </ul>
+            </div>
+            <div class="cs-solution__mockup-wrap cs-fade">
+              <div class="cs-mockup cs-mockup--flush" data-placeholder="intelyedu-solution.png">
+                <img src="intelyedu-solution.png" alt="IntelyEdu All Courses page final design" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- Reflection ---------- -->
+        <section id="reflection" class="cs-fade">
+          <p class="cs-eyebrow">LOOKING BACK</p>
+          <h2 class="cs-heading">What I learned</h2>
+          <div class="cs-reflection__grid">
+            <ul class="cs-reflection__list">
+              <li>This project taught me what it means to work with stakeholders &mdash; taking and receiving feedback without letting emotions get in the way, and translating that feedback into better design decisions.</li>
+              <li>Scoping the redesign by page kept the project focused and deliverable within a short contract window &mdash; shipping what mattered most within development constraints.</li>
+              <li>Designing for a healthcare-education audience meant earning trust before asking for action &mdash; credibility signals needed to come earlier and louder in the hierarchy.</li>
+            </ul>
+            <div class="cs-reflection__decoration" aria-hidden="true">&ldquo;</div>
+          </div>
+          <a href="index.html" class="cs-back">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Back to case studies</span>
+          </a>
+        </section>
+      </div>
+
+      <!-- Sticky side nav (right on desktop, horizontal pills on mobile) -->
+      <nav class="cs-sidenav" aria-label="Case study sections">
+        <a href="#overview" class="cs-sidenav__link">Overview</a>
+        <a href="#challenge" class="cs-sidenav__link">The Challenge</a>
+        <a href="#goals" class="cs-sidenav__link">Goals</a>
+        <a href="#process" class="cs-sidenav__link">Process</a>
+        <a href="#solution" class="cs-sidenav__link">Solution</a>
+        <a href="#reflection" class="cs-sidenav__link">Reflection</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Floating bottom nav (shared with homepage) -->
+  <nav class="floating-nav" aria-label="Primary">
+    <a href="index.html" class="floating-nav__brand" aria-label="Linda Khuth home">LINDA KHUTH</a>
+    <ul class="floating-nav__links">
+      <li>
+        <a href="index.html#work">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="floating-nav__label">Case Studies</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="floating-nav__label">About Me</span>
+        </a>
+      </li>
+      <li>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15 3v4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12h7M8.5 15.5h7M8.5 19h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span class="floating-nav__label">Resume</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/linda-khuth/" target="_blank" rel="noopener noreferrer">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span class="floating-nav__label">LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    (() => {
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Highlight the current page's nav link. Case Studies stays active on both
+      // the homepage and any case study detail page. Static hosts sometimes strip
+      // `.html`, so we normalize by comparing filenames without the extension.
+      (() => {
+        const raw = (location.pathname.split('/').pop() || 'index').toLowerCase();
+        const currentPage = raw.replace(/\.html$/, '');
+        const isAbout = currentPage === 'about';
+        document.querySelectorAll('.floating-nav__links a').forEach(link => {
+          const label = link.querySelector('.floating-nav__label')?.textContent?.trim();
+          if (isAbout && label === 'About Me') link.classList.add('nav--active');
+          else if (!isAbout && label === 'Case Studies') link.classList.add('nav--active');
+        });
+      })();
+
+      /* -------- Fade-in on scroll -------- */
+      const faders = document.querySelectorAll('.cs-fade');
+      const markVisibleIfInView = () => {
+        const vh = window.innerHeight;
+        faders.forEach(el => {
+          if (el.classList.contains('is-visible')) return;
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.85 && r.bottom > 0) {
+            el.classList.add('is-visible');
+          }
+        });
+      };
+      if (reduced) {
+        faders.forEach(el => el.classList.add('is-visible'));
+      } else {
+        markVisibleIfInView();
+        if ('IntersectionObserver' in window) {
+          const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+          faders.forEach(el => {
+            if (!el.classList.contains('is-visible')) fadeObserver.observe(el);
+          });
+        }
+        window.addEventListener('scroll', markVisibleIfInView, { passive: true });
+      }
+
+      /* -------- Scroll spy for side nav -------- */
+      const sections = document.querySelectorAll('.cs-content > section[id]');
+      const navLinks = document.querySelectorAll('.cs-sidenav__link');
+      if (sections.length && navLinks.length) {
+        const linkById = {};
+        navLinks.forEach(a => {
+          const id = a.getAttribute('href').slice(1);
+          linkById[id] = a;
+        });
+        const setActive = (id) => {
+          navLinks.forEach(a => a.classList.remove('is-active'));
+          if (linkById[id]) linkById[id].classList.add('is-active');
+        };
+        const updateSpy = () => {
+          const anchor = window.innerHeight * 0.3;
+          let currentId = sections[0].id;
+          sections.forEach(s => {
+            if (s.getBoundingClientRect().top <= anchor) currentId = s.id;
+          });
+          setActive(currentId);
+        };
+        updateSpy();
+        window.addEventListener('scroll', updateSpy, { passive: true });
+        window.addEventListener('resize', updateSpy);
+      }
+
+    })();
+  </script>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+  <script>
+    (() => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      if (!lightbox || !lightboxImg) return;
+
+      document.querySelectorAll('main img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightbox.classList.add('active');
+        });
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) lightbox.classList.remove('active');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') lightbox.classList.remove('active');
+      });
+    })();
+  </script>
+</body>
+</html>

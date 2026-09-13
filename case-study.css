@@ -1,0 +1,625 @@
+/* ==========================================================================
+   Case Study page styles
+   Depends on tokens + cursor + floating-nav from styles.css
+   ========================================================================== */
+
+/* ---------- Layout ---------- */
+.cs-page {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.cs-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--matcha);
+  margin: 0 0 var(--s-3);
+  display: inline-block;
+}
+
+.cs-heading {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 500;
+  font-size: clamp(32px, 4.2vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 var(--s-6);
+}
+
+.cs-heading--center {
+  text-align: center;
+}
+
+/* ---------- Hero ---------- */
+.cs-hero {
+  padding: 140px 0 120px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+
+.cs-hero__meta { min-width: 0; }
+
+.cs-tags {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0 0 var(--s-4);
+}
+
+.cs-hero__title {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 500;
+  font-size: clamp(40px, 4.2vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 var(--s-5);
+}
+
+.cs-hero__callout {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.4;
+  color: var(--matcha);
+  border-left: 3px solid var(--matcha);
+  padding: 4px 0 4px 20px;
+  margin: 0 0 var(--s-6);
+  max-width: 44ch;
+  quotes: none;
+}
+
+.cs-hero__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-3) var(--s-5);
+  margin: 0 0 var(--s-5);
+  padding: 0;
+}
+
+.cs-hero__details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-hero__details dt {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.55;
+  margin: 0;
+}
+
+.cs-hero__details dd {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0;
+}
+
+.cs-live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--matcha);
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--matcha);
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+.cs-live-link:hover { gap: 12px; opacity: 0.8; }
+
+/* ---------- Mockup frame (image placeholder) ---------- */
+.cs-mockup {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card);
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 60px -30px rgba(0,0,0,0.2), 0 6px 20px -8px rgba(0,0,0,0.08);
+}
+.cs-mockup img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.cs-mockup::before {
+  content: attr(data-placeholder);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(26,26,26,0.4);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  z-index: 0;
+}
+.cs-mockup--large { min-height: 480px; }
+.cs-mockup--phone {
+  max-width: 320px;
+  margin: 0 auto;
+  min-height: 560px;
+  background: transparent;
+  box-shadow: none;
+}
+.cs-mockup--phone::before { color: rgba(26,26,26,0.35); }
+.cs-mockup--flush { background: var(--card); box-shadow: none; }
+.cs-mockup--flush img { border-radius: 12px; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.2); }
+/* When an image inside flush loads, hide the placeholder background */
+.cs-mockup--flush:has(img[src]:not([src=""])) { background: transparent; }
+
+/* ---------- Body layout with sticky side nav ---------- */
+.cs-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: clamp(40px, 5vw, 80px);
+  padding: 60px 0 120px;
+}
+
+.cs-content { min-width: 0; }
+.cs-content > section {
+  padding: 80px 0;
+  scroll-margin-top: 80px;
+}
+.cs-content > section:first-child { padding-top: 0; }
+
+.cs-sidenav {
+  position: sticky;
+  top: 32px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+.cs-sidenav__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  opacity: 0.5;
+  padding: 8px 0;
+  transition: opacity 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+  position: relative;
+}
+.cs-sidenav__link:hover { opacity: 0.85; }
+.cs-sidenav__link.is-active {
+  color: var(--matcha);
+  opacity: 1;
+  font-weight: 600;
+}
+.cs-sidenav__link.is-active::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 20px;
+  background: var(--matcha);
+  border-radius: 2px;
+}
+
+/* ---------- Overview: 3 stat/context columns ---------- */
+.cs-overview__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+}
+.cs-overview__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.cs-overview__num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--matcha);
+  margin: 0;
+}
+.cs-overview__label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0;
+}
+.cs-overview__body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ---------- Cards (challenge + goals + results) ---------- */
+.cs-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.cs-card {
+  position: relative;
+  background: #FAF8F4;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: clamp(24px, 2.4vw, 36px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.cs-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--matcha);
+}
+.cs-card__num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  color: var(--matcha);
+  opacity: 0.85;
+  margin: 0;
+}
+.cs-card__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--matcha);
+  opacity: 0.85;
+}
+.cs-card__title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cs-card__body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.8;
+  margin: 0;
+}
+.cs-card__insight {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--matcha);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: var(--s-2);
+  margin: auto 0 0;
+}
+
+/* Goal cards: minimal, no top accent, same background as challenge cards */
+.cs-goal {
+  padding: clamp(20px, 2vw, 28px);
+  background: #FAF8F4;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+}
+.cs-goal::before { display: none; }
+.cs-goal .cs-card__title { font-size: 22px; white-space: normal; overflow: visible; text-overflow: clip; }
+
+/* Result cards: icon + statement + supporting, same background as challenge cards */
+.cs-result {
+  padding: clamp(20px, 2vw, 28px);
+  background: #FAF8F4;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+}
+.cs-result::before { display: none; }
+.cs-result__icon {
+  font-size: 32px;
+  line-height: 1;
+  margin: 0;
+}
+.cs-result__title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0;
+}
+.cs-result__body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ---------- Process steps ---------- */
+.cs-process { display: flex; flex-direction: column; gap: clamp(64px, 8vw, 120px); }
+.cs-process__step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+.cs-process__step:nth-child(even) .cs-process__meta { order: 2; }
+.cs-process__step:nth-child(even) .cs-process__mockup-wrap { order: 1; }
+
+.cs-process__num {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  color: var(--matcha);
+  margin: 0 0 var(--s-2);
+}
+.cs-process__title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0 0 var(--s-3);
+}
+.cs-process__body {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ---------- Solution 2-col ---------- */
+#solution .cs-heading { margin-bottom: 32px; }
+
+.cs-solution__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(40px, 5vw, 80px);
+  align-items: center;
+  margin-bottom: var(--s-10);
+}
+.cs-solution__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--s-4) 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.cs-solution__list li {
+  position: relative;
+  padding-left: 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.9;
+}
+.cs-solution__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 16px;
+  height: 2px;
+  background: var(--matcha);
+}
+.cs-solution__lead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.45;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ---------- Reflection ---------- */
+.cs-reflection__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+.cs-reflection__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.cs-reflection__list li {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--ink);
+  padding-left: 24px;
+  border-left: 2px solid var(--matcha);
+}
+.cs-reflection__decoration {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(180px, 22vw, 320px);
+  line-height: 0.8;
+  color: var(--matcha);
+  opacity: 0.3;
+  text-align: center;
+  user-select: none;
+}
+
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--s-10);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  color: var(--matcha);
+  padding-bottom: 4px;
+  border-bottom: 1.5px solid var(--matcha);
+  transition: gap 0.2s ease, opacity 0.2s ease;
+}
+.cs-back:hover { gap: 12px; opacity: 0.8; }
+
+/* ---------- Fade-in on scroll ---------- */
+.cs-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.cs-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-fade { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .cs-body { grid-template-columns: minmax(0, 1fr) 180px; gap: 48px; }
+}
+
+@media (max-width: 900px) {
+  .cs-hero {
+    padding: 100px 0 80px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .cs-body {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 40px 0 80px;
+  }
+  .cs-sidenav {
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+    flex-direction: row;
+    gap: 4px;
+    padding: 8px;
+    margin: 0 calc(var(--gutter) * -1) 32px;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    border-left: none;
+    overflow-x: auto;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    scrollbar-width: none;
+  }
+  .cs-sidenav::-webkit-scrollbar { display: none; }
+  .cs-sidenav__link {
+    padding: 8px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+    background: transparent;
+    flex-shrink: 0;
+  }
+  .cs-sidenav__link.is-active {
+    background: var(--matcha);
+    color: #fff;
+  }
+  .cs-sidenav__link.is-active::before { display: none; }
+
+  .cs-content > section { padding: 60px 0; scroll-margin-top: 72px; }
+
+  .cs-overview__grid,
+  .cs-cards { grid-template-columns: 1fr; }
+
+  .cs-process__step {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .cs-process__step:nth-child(even) .cs-process__meta { order: 1; }
+  .cs-process__step:nth-child(even) .cs-process__mockup-wrap { order: 2; }
+
+  .cs-solution__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .cs-solution__mockup-wrap { max-width: 320px; margin: 0 auto; }
+
+  .cs-reflection__grid { grid-template-columns: 1fr; gap: 40px; }
+  .cs-reflection__decoration { font-size: 200px; }
+
+  .cs-hero__title { font-size: clamp(36px, 8vw, 56px); }
+  .cs-mockup { min-height: 220px; }
+  .cs-mockup--large { min-height: 320px; }
+}
+
+@media (max-width: 720px) {
+  .cs-hero { padding: 80px 0 60px; }
+  .cs-content > section { padding: 48px 0; }
+  .cs-hero__details {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-page { padding: 0 24px; }
+  .cs-hero { padding: 60px 0 48px; gap: 32px; }
+  .cs-hero__title { font-size: 40px; }
+  .cs-hero__callout { font-size: 18px; padding-left: 16px; }
+  .cs-content > section { padding: 40px 0; }
+  .cs-heading { font-size: 30px; margin-bottom: var(--s-4); }
+  .cs-mockup { border-radius: 12px; }
+  .cs-card { padding: 20px; }
+  .cs-reflection__decoration { font-size: 140px; }
+}

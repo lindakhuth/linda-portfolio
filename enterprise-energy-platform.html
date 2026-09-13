@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enterprise Energy Management Platform — Linda Khuth</title>
+  <meta name="description" content="Case study: MykroGrid's enterprise energy management platform. A concept design that closed enterprise deals — then became the product." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+
+  <style>
+    /* Page-specific overrides for the enterprise case study.
+       This title (37 chars) and the challenge card titles (up to 28 chars)
+       need smaller max font sizes than the MykroGrid case study to fit
+       in two hero lines / one card line without truncation. */
+    .cs-hero__title { font-size: clamp(40px, 3.4vw, 48px); }
+    #challenge .cs-card__title { font-size: 16px; }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 24px;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      cursor: default;
+    }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      color: #1A1A1A;
+      border: 0;
+      font-size: 20px;
+      line-height: 1;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+      z-index: 10000;
+    }
+    .lightbox-nav:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.05);
+    }
+    .lightbox-overlay.has-siblings .lightbox-nav { display: flex; }
+    .lightbox-prev { left: 24px; }
+    .lightbox-next { right: 24px; }
+  </style>
+</head>
+<body>
+  <main class="cs-page">
+    <!-- ==================== HERO ==================== -->
+    <section class="cs-hero">
+      <div class="cs-hero__meta cs-fade">
+        <p class="cs-tags">B2B SAAS &middot; CLOUD OPS &middot; FACILITIES</p>
+        <h1 class="cs-hero__title">Enterprise Energy Management Platform</h1>
+        <blockquote class="cs-hero__callout">
+          A concept design that closed enterprise deals &mdash; then became the product.
+        </blockquote>
+        <dl class="cs-hero__details">
+          <div><dt>Role</dt><dd>Sole Product Designer</dd></div>
+          <div><dt>Team</dt><dd>2 Software Engineers, Stakeholders</dd></div>
+          <div><dt>Timeline</dt><dd>Dec 2025 &ndash; Feb 2026</dd></div>
+          <div><dt>Platform</dt><dd>Web &amp; Mobile</dd></div>
+        </dl>
+      </div>
+      <div class="cs-hero__mockup cs-fade">
+        <img src="enterprise-hero.png" alt="Enterprise Energy Management Platform dashboard" style="width: 100%; height: 100%; object-fit: cover; object-position: top;" />
+      </div>
+    </section>
+
+    <!-- ==================== BODY (content + sticky sidenav) ==================== -->
+    <div class="cs-body">
+      <div class="cs-content">
+        <!-- ---------- Overview ---------- -->
+        <section id="overview" class="cs-fade">
+          <p class="cs-eyebrow">OVERVIEW</p>
+          <div class="cs-overview__grid">
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">01</p>
+              <p class="cs-overview__label">The Brief</p>
+              <p class="cs-overview__body">Design an enterprise energy management platform for MykroGrid &mdash; a cloud operations and facilities monitoring tool giving energy teams a single pane of glass for site health, alarms, and interventions across multiple facilities.</p>
+            </div>
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">02</p>
+              <p class="cs-overview__label">The Problem</p>
+              <p class="cs-overview__body">MykroGrid had no platform to offer enterprise clients managing multiple facilities. Without a product to show, closing larger deals was nearly impossible. Internally, our own engineers were managing grids manually with no standardized workflow, no historical record, and no remote visibility.</p>
+            </div>
+            <div class="cs-overview__item">
+              <p class="cs-overview__num">03</p>
+              <p class="cs-overview__label">The Outcome</p>
+              <p class="cs-overview__body">A concept design used to pitch and close enterprise clients &mdash; built on real insights from our own field engineers &mdash; pushed directly into development once deals were signed and now live across multiple facilities.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- The Challenge ---------- -->
+        <section id="challenge" class="cs-fade">
+          <p class="cs-eyebrow" style="text-align:center; display:block;">THE PROBLEM</p>
+          <h2 class="cs-heading cs-heading--center">The Challenge</h2>
+          <div class="cs-cards">
+            <article class="cs-card">
+              <p class="cs-card__num">01</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <rect x="4" y="6" width="32" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M14 32h12M20 28v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M10 12h20M10 18h14M10 24h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              </svg>
+              <h3 class="cs-card__title">No Product to Show</h3>
+              <p class="cs-card__body">MykroGrid was pitching enterprise clients with no platform to demonstrate. Deals stalled without a tangible product.</p>
+              <p class="cs-card__insight">We needed something real enough to close deals, built on real enough research to actually work.</p>
+            </article>
+            <article class="cs-card">
+              <p class="cs-card__num">02</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M6 14l14-8 14 8-14 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M6 22l14 8 14-8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M6 30l14 8 14-8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+              <h3 class="cs-card__title">Complex Multi-Facility Needs</h3>
+              <p class="cs-card__body">Enterprise clients manage multiple facilities with different energy profiles, alert thresholds, and operational teams.</p>
+              <p class="cs-card__insight">One dashboard had to serve many contexts &mdash; informed by engineers who work across multiple grid sites daily.</p>
+            </article>
+            <article class="cs-card">
+              <p class="cs-card__num">03</p>
+              <svg class="cs-card__icon" viewBox="0 0 40 40" aria-hidden="true">
+                <path d="M20 4l14 6v10c0 9-6 15-14 18-8-3-14-9-14-18V10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M20 14v10M20 28v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <h3 class="cs-card__title">Mission-Critical Reliability</h3>
+              <p class="cs-card__body">Energy operations can&rsquo;t afford missed alerts or confusing interfaces. The design had to prioritize clarity above all else.</p>
+              <p class="cs-card__insight">In energy infrastructure, a missed alert isn&rsquo;t a UX problem &mdash; it&rsquo;s an operational failure.</p>
+            </article>
+          </div>
+
+          <div style="margin-top: 48px;">
+            <p style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #7D9B6A; margin-bottom: 16px;">COMPETITIVE LANDSCAPE</p>
+            <img src="enterprise-competitive.png" alt="Competitive analysis: MykroGrid vs Deye Cloud vs Solarman" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+          </div>
+        </section>
+
+        <!-- ---------- Goals ---------- -->
+        <section id="goals" class="cs-fade">
+          <p class="cs-eyebrow">WHAT WE SET OUT TO DO</p>
+          <h2 class="cs-heading">Three Goals. One Platform.</h2>
+          <div class="cs-cards">
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 01</p>
+              <h3 class="cs-card__title">Clarity</h3>
+              <p class="cs-card__body">Give energy teams a single pane of glass for site health, alarms, and interventions across all facilities.</p>
+            </article>
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 02</p>
+              <h3 class="cs-card__title">Speed</h3>
+              <p class="cs-card__body">Design and ship fast enough to support active enterprise sales conversations.</p>
+            </article>
+            <article class="cs-card cs-goal">
+              <p class="cs-card__num">GOAL 03</p>
+              <h3 class="cs-card__title">Scale</h3>
+              <p class="cs-card__body">Build a foundation flexible enough to serve clients with one facility or twenty.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Process ---------- -->
+        <section id="process" class="cs-fade">
+          <p class="cs-eyebrow">HOW WE GOT THERE</p>
+          <h2 class="cs-heading">Discovery to Delivery</h2>
+          <div class="cs-process">
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 01</p>
+                <h3 class="cs-process__title">Research &amp; Discovery</h3>
+                <p class="cs-process__body">Conducted interviews with MykroGrid&rsquo;s own site engineers &mdash; Samson, Alabi, and Gospel &mdash; to understand how energy monitoring actually works on the ground. Core patterns emerged: work is physical and senses-driven, troubleshooting is reactive and experience-based, reporting is inconsistent, and there is no standardized daily workflow or remote visibility. Key insight: software should support, not replace, their physical workflow. These findings became the foundation for the Enterprise platform&rsquo;s information architecture and feature prioritization.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                  <img src="enterprise-research-1.png" alt="What we learned from engineer interviews" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+                  <img src="enterprise-research-2.png" alt="Key insights from site engineer research" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 02</p>
+                <h3 class="cs-process__title">Persona Development</h3>
+                <p class="cs-process__body">Built detailed user journeys for each engineer based on interview findings &mdash; mapping their morning startup routines, mid-day monitoring habits, troubleshooting workflows, and end-of-day checks. Each engineer had a distinct approach: Samson focused on switchgear and inverter checks, Alabi prioritized customer complaints and line tracing, Gospel led with thermal checks and field walks. These three journeys defined the three core user types the platform needed to serve: the hands-on site engineer, the reactive troubleshooter, and the field inspector.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <div class="persona-slider" style="position: relative; overflow: hidden; border-radius: 12px;">
+                  <div class="persona-slides" style="display: flex; transition: transform 0.3s ease;">
+                    <img src="enterprise-persona-samson.png" alt="Samson - Site Engineer user journey" style="min-width: 100%; border-radius: 12px;" />
+                    <img src="enterprise-persona-alabi.png" alt="Alabi - Site Engineer user journey" style="min-width: 100%; border-radius: 12px;" />
+                    <img src="enterprise-persona-gospel.png" alt="Gospel - Site Engineer user journey" style="min-width: 100%; border-radius: 12px;" />
+                  </div>
+                  <div class="persona-dots" style="display: flex; gap: 8px; justify-content: center; margin-top: 16px;">
+                    <span class="persona-dot" style="width: 8px; height: 8px; border-radius: 999px; background: #7D9B6A; cursor: pointer;"></span>
+                    <span class="persona-dot" style="width: 8px; height: 8px; border-radius: 999px; background: #E0D9CE; cursor: pointer;"></span>
+                    <span class="persona-dot" style="width: 8px; height: 8px; border-radius: 999px; background: #E0D9CE; cursor: pointer;"></span>
+                  </div>
+                </div>
+                <script>
+                  (() => {
+                    const slides = document.querySelector('.persona-slides');
+                    const dots = document.querySelectorAll('.persona-dot');
+                    if (!slides || !dots.length) return;
+                    let current = 0;
+                    const total = 3;
+                    function goTo(index) {
+                      current = (index + total) % total;
+                      slides.style.transform = `translateX(-${current * 100}%)`;
+                      dots.forEach((dot, i) => {
+                        dot.style.background = i === current ? '#7D9B6A' : '#E0D9CE';
+                      });
+                    }
+                    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+                  })();
+                </script>
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 03</p>
+                <h3 class="cs-process__title">UI Design &amp; AI-Assisted Workflow</h3>
+                <p class="cs-process__body">Designed the full platform UI &mdash; dashboard, alert management, facility overview, and reporting &mdash; with the engineer workflows at the center. The future state journey informed key design decisions: a big screen view for arriving engineers to see all alarms at a glance, auto-generated tasks tied to each alarm type, and a daily checklist that builds an operational history over time. Used an AI-assisted product workflow for research synthesis, UX copy, and rapid concept generation, significantly accelerating the design process.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <img src="enterprise-ui.png" alt="Enterprise Energy Management Platform UI design" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+              </div>
+            </div>
+
+            <div class="cs-process__step">
+              <div class="cs-process__meta">
+                <p class="cs-process__num">STEP 04</p>
+                <h3 class="cs-process__title">Handoff &amp; Iteration</h3>
+                <p class="cs-process__body">Prioritized desktop given timeline constraints, providing detailed mobile guidance for key screens where engineering needed more direction. The research phase &mdash; interviews with real engineers doing real work &mdash; meant design decisions were grounded in operational reality rather than assumptions. Worked directly with engineers Kene and Oke through handoff, iterating based on technical constraints and stakeholder feedback from the enterprise sales process.</p>
+              </div>
+              <div class="cs-process__mockup-wrap cs-fade">
+                <img src="enterprise-handoff.png" alt="Enterprise Energy Management Platform developer handoff" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- Solution ---------- -->
+        <section id="solution" class="cs-fade">
+          <p class="cs-eyebrow">THE RESULT</p>
+          <h2 class="cs-heading">From concept to enterprise product</h2>
+
+          <div class="cs-solution__grid">
+            <div class="cs-solution__meta">
+              <p class="cs-solution__lead">Designed a cloud operations and facilities monitoring platform giving energy teams real-time visibility into site health, alarms, and infrastructure performance.</p>
+              <ul class="cs-solution__list">
+                <li>Built persona-driven navigation that serves field engineers, operations managers, and executive stakeholders from one interface.</li>
+                <li>The concept design was used directly in enterprise sales pitches &mdash; once deals closed, it went straight into development.</li>
+                <li>Now live and in use across multiple enterprise facilities.</li>
+              </ul>
+            </div>
+            <div class="cs-solution__mockup-wrap cs-fade">
+              <img src="enterprise-solution.png" alt="Enterprise Energy Management Platform solution" style="width: 100%; border-radius: 12px; cursor: zoom-in;" />
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- Results ---------- -->
+        <section id="results" class="cs-fade">
+          <p class="cs-eyebrow">OUTCOMES</p>
+          <h2 class="cs-heading">What shipped</h2>
+          <div class="cs-cards">
+            <article class="cs-card cs-result">
+              <p class="cs-result__icon" aria-hidden="true">🏢</p>
+              <h3 class="cs-result__title">Enterprise deals closed</h3>
+              <p class="cs-result__body">The concept design was used to pitch and close enterprise clients before a single line of code was written.</p>
+            </article>
+            <article class="cs-card cs-result">
+              <p class="cs-result__icon" aria-hidden="true">🚀</p>
+              <h3 class="cs-result__title">Concept to production</h3>
+              <p class="cs-result__body">Once deals were signed the design went directly into development &mdash; now live across multiple facilities.</p>
+            </article>
+            <article class="cs-card cs-result">
+              <p class="cs-result__icon" aria-hidden="true">🎯</p>
+              <h3 class="cs-result__title">Scoped under pressure</h3>
+              <p class="cs-result__body">Delivered a full platform design in under 3 months, prioritizing desktop with targeted mobile guidance for key screens.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ---------- Reflection ---------- -->
+        <section id="reflection" class="cs-fade">
+          <p class="cs-eyebrow">LOOKING BACK</p>
+          <h2 class="cs-heading">What I learned</h2>
+          <div class="cs-reflection__grid">
+            <ul class="cs-reflection__list">
+              <li>Designing for sales as much as for users was a new constraint &mdash; the platform had to be convincing to a stakeholder in a pitch AND usable by an engineer in the field.</li>
+              <li>Working under tight timeline pressure forced better scoping decisions &mdash; desktop first, mobile guidance where it mattered most.</li>
+              <li>Collaborating directly with engineers Kene and Oke from early on meant fewer surprises at handoff and a more faithful build.</li>
+            </ul>
+            <div class="cs-reflection__decoration" aria-hidden="true">&ldquo;</div>
+          </div>
+          <a href="index.html" class="cs-back">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Back to case studies</span>
+          </a>
+        </section>
+      </div>
+
+      <!-- Sticky side nav (right on desktop, horizontal pills on mobile) -->
+      <nav class="cs-sidenav" aria-label="Case study sections">
+        <a href="#overview" class="cs-sidenav__link">Overview</a>
+        <a href="#challenge" class="cs-sidenav__link">The Challenge</a>
+        <a href="#goals" class="cs-sidenav__link">Goals</a>
+        <a href="#process" class="cs-sidenav__link">Process</a>
+        <a href="#solution" class="cs-sidenav__link">Solution</a>
+        <a href="#results" class="cs-sidenav__link">Results</a>
+        <a href="#reflection" class="cs-sidenav__link">Reflection</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Floating bottom nav (shared with homepage) -->
+  <nav class="floating-nav" aria-label="Primary">
+    <a href="index.html" class="floating-nav__brand" aria-label="Linda Khuth home">LINDA KHUTH</a>
+    <ul class="floating-nav__links">
+      <li>
+        <a href="index.html#work">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="15" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="15" width="7" height="5" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="floating-nav__label">Case Studies</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="floating-nav__label">About Me</span>
+        </a>
+      </li>
+      <li>
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M15 3v4h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 12h7M8.5 15.5h7M8.5 19h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span class="floating-nav__label">Resume</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/linda-khuth/" target="_blank" rel="noopener noreferrer">
+          <svg class="floating-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span class="floating-nav__label">LinkedIn</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    (() => {
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Highlight the current page's nav link. Case Studies stays active on both
+      // the homepage and any case study detail page. Static hosts sometimes strip
+      // `.html`, so we normalize by comparing filenames without the extension.
+      (() => {
+        const raw = (location.pathname.split('/').pop() || 'index').toLowerCase();
+        const currentPage = raw.replace(/\.html$/, '');
+        const isAbout = currentPage === 'about';
+        document.querySelectorAll('.floating-nav__links a').forEach(link => {
+          const label = link.querySelector('.floating-nav__label')?.textContent?.trim();
+          if (isAbout && label === 'About Me') link.classList.add('nav--active');
+          else if (!isAbout && label === 'Case Studies') link.classList.add('nav--active');
+        });
+      })();
+
+      /* -------- Fade-in on scroll -------- */
+      const faders = document.querySelectorAll('.cs-fade');
+      const markVisibleIfInView = () => {
+        const vh = window.innerHeight;
+        faders.forEach(el => {
+          if (el.classList.contains('is-visible')) return;
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.85 && r.bottom > 0) {
+            el.classList.add('is-visible');
+          }
+        });
+      };
+      if (reduced) {
+        faders.forEach(el => el.classList.add('is-visible'));
+      } else {
+        markVisibleIfInView();
+        if ('IntersectionObserver' in window) {
+          const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                fadeObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+          faders.forEach(el => {
+            if (!el.classList.contains('is-visible')) fadeObserver.observe(el);
+          });
+        }
+        window.addEventListener('scroll', markVisibleIfInView, { passive: true });
+      }
+
+      /* -------- Scroll spy for side nav -------- */
+      const sections = document.querySelectorAll('.cs-content > section[id]');
+      const navLinks = document.querySelectorAll('.cs-sidenav__link');
+      if (sections.length && navLinks.length) {
+        const linkById = {};
+        navLinks.forEach(a => {
+          const id = a.getAttribute('href').slice(1);
+          linkById[id] = a;
+        });
+        const setActive = (id) => {
+          navLinks.forEach(a => a.classList.remove('is-active'));
+          if (linkById[id]) linkById[id].classList.add('is-active');
+        };
+        const updateSpy = () => {
+          const anchor = window.innerHeight * 0.3;
+          let currentId = sections[0].id;
+          sections.forEach(s => {
+            if (s.getBoundingClientRect().top <= anchor) currentId = s.id;
+          });
+          setActive(currentId);
+        };
+        updateSpy();
+        window.addEventListener('scroll', updateSpy, { passive: true });
+        window.addEventListener('resize', updateSpy);
+      }
+
+    })();
+  </script>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&larr;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">&rarr;</button>
+  </div>
+  <script>
+    (() => {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const prevBtn = lightbox?.querySelector('.lightbox-prev');
+      const nextBtn = lightbox?.querySelector('.lightbox-next');
+      if (!lightbox || !lightboxImg) return;
+
+      const images = Array.from(document.querySelectorAll('main img'));
+      let currentIndex = -1;
+
+      // Toggle arrow visibility based on how many navigable images exist.
+      if (images.length > 1) lightbox.classList.add('has-siblings');
+
+      const showAt = (index) => {
+        if (!images.length) return;
+        currentIndex = ((index % images.length) + images.length) % images.length;
+        const img = images[currentIndex];
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      };
+
+      const open = (index) => {
+        showAt(index);
+        lightbox.classList.add('active');
+      };
+
+      const close = () => lightbox.classList.remove('active');
+
+      images.forEach((img, i) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => open(i));
+      });
+
+      prevBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showAt(currentIndex - 1);
+      });
+      nextBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showAt(currentIndex + 1);
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        // Only close when clicking the backdrop — not the image or the nav buttons.
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft' && images.length > 1) showAt(currentIndex - 1);
+        else if (e.key === 'ArrowRight' && images.length > 1) showAt(currentIndex + 1);
+      });
+    })();
+  </script>
+</body>
+</html>
