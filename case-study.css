@@ -623,3 +623,14 @@
   .cs-card { padding: 20px; }
   .cs-reflection__decoration { font-size: 140px; }
 }
+
+/* Hide the sticky side nav on tablet and mobile — floating bottom nav handles it below 1025px */
+@media (max-width: 1024px) {
+  .cs-sidenav,
+  .side-nav,
+  .case-nav,
+  [class*="side-nav"],
+  [class*="sticky-nav"] {
+    display: none !important;
+  }
+}
