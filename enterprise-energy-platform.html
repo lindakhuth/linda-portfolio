@@ -226,6 +226,7 @@
                 </div>
                 <script>
                   (() => {
+                    const sliderEl = document.querySelector('.persona-slider');
                     const slides = document.querySelector('.persona-slides');
                     const dots = document.querySelectorAll('.persona-dot');
                     if (!slides || !dots.length) return;
@@ -239,6 +240,21 @@
                       });
                     }
                     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+                    // Touch swipe support
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    sliderEl.addEventListener('touchstart', (e) => {
+                      touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+                    sliderEl.addEventListener('touchend', (e) => {
+                      touchEndX = e.changedTouches[0].screenX;
+                      const diff = touchStartX - touchEndX;
+                      if (Math.abs(diff) > 50) {
+                        if (diff > 0) goTo(current + 1); // swipe left → next
+                        else goTo(current - 1);          // swipe right → previous
+                      }
+                    }, { passive: true });
                   })();
                 </script>
               </div>
